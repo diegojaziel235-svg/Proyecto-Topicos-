@@ -10,16 +10,18 @@ public class Vehiculo {
     private String color;
     private String tipo;
     private String observaciones;
+    private String estatus;
  
     public Vehiculo() {}
  
-    public Vehiculo(int idAuto, String marca, String modelo, String color, String tipo, String observaciones) {
+    public Vehiculo(int idAuto, String marca, String modelo, String color, String tipo, String observaciones,String estatus) {
         this.idAuto = idAuto;
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
         this.tipo = tipo;
         this.observaciones = observaciones;
+        this.estatus=estatus;
     }
  
     public int getIdAuto() { return idAuto; }
@@ -39,7 +41,12 @@ public class Vehiculo {
  
     public String getObservaciones() { return observaciones; }
     public void setObservaciones(String observaciones) { this.observaciones = observaciones; }
- 
+    public String getEstatus(){
+        return estatus;
+    }
+    public void getEstatus(String estatus){
+        this.estatus=estatus;
+    }
     @Override
     public String toString() {
         return "Vehiculo{idAuto=" + idAuto + ", marca='" + marca + "', modelo='" + modelo +

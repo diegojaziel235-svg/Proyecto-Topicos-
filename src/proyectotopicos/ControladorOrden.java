@@ -23,10 +23,10 @@ public class ControladorOrden {
     public ControladorOrden() {
 
         // Agregar vehículos de prueba
-        listaVehiculos.add(new Vehiculo(1, "Toyota", "Corolla", "Rojo", "Sedán", "Aire acondicionado"));
-        listaVehiculos.add(new Vehiculo(2, "Honda", "Civic", "Azul", "Sedán", "Automático"));
-        listaVehiculos.add(new Vehiculo(3, "Ford", "Fiesta", "Blanco", "Hatchback", "Sin observaciones"));
-        listaVehiculos.add(new Vehiculo(4, "Chevrolet", "Spark", "Gris", "Hatchback", "Buen estado"));
+        listaVehiculos.add(new Vehiculo(1, "Toyota", "Corolla", "Rojo", "Sedán", "Aire acondicionado","En proceso"));
+        listaVehiculos.add(new Vehiculo(2, "Honda", "Civic", "Azul", "Sedán", "Automático","Finalizado"));
+        listaVehiculos.add(new Vehiculo(3, "Ford", "Fiesta", "Blanco", "Hatchback", "Sin observaciones","En proceso"));
+        listaVehiculos.add(new Vehiculo(4, "Chevrolet", "Spark", "Gris", "Hatchback", "Buen estado","Finalizado"));
     }
     public String obtenerNombreCliente(int idCliente) {
         for (Cliente c : listaClientes) {
@@ -168,7 +168,8 @@ public class ControladorOrden {
                 v.getModelo(),
                 v.getColor(),
                 v.getTipo(),
-                nombreCliente
+                nombreCliente,
+                v.getEstatus()
             });
         }
     }
@@ -195,6 +196,7 @@ public class ControladorOrden {
         mod.addColumn("Color");
         mod.addColumn("Tipo");
         mod.addColumn("Cliente");
+        mod.addColumn("Estado");
         tabla.setModel(mod);
         cargarVehiculos(tabla);
     }
@@ -405,7 +407,7 @@ public class ControladorOrden {
             }
 
             
-            Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, marca, modelo, color, tipo, observaciones);
+            Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, marca, modelo, color, tipo, observaciones,"En proceso");
             listaVehiculos.add(nuevoVehiculo);
             limpiarCamposVehiculo(txtMarca, txtModelo, txtColor, txtTipo, txtObservaciones);
             cargarVehiculos(tabla);
