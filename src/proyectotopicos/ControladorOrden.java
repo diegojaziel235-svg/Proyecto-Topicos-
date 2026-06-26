@@ -216,7 +216,53 @@ public void actualizar(PanelPrincipal panel) {
     }
 }
     
-    
+  public void generarTicket(PanelPrincipal panel) {
+
+    try {
+        int fila = panel.jTable1.getSelectedRow();
+
+        if (fila == -1) {
+            throw new Exception("Selecciona una orden de la tabla para generar el ticket.");
+        }
+
+        DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
+
+        String idOrden      = modelo.getValueAt(fila, 0).toString();
+        String idCliente    = modelo.getValueAt(fila, 1).toString();
+        String idVehiculo   = modelo.getValueAt(fila, 2).toString();
+        String idServicio   = modelo.getValueAt(fila, 3).toString();
+        String fechaIngreso = modelo.getValueAt(fila, 4).toString();
+        String costo        = modelo.getValueAt(fila, 5).toString();
+        String estado       = modelo.getValueAt(fila, 6).toString();
+
+        // Tipo de pago seleccionado
+        String tipoPago = panel.tipoPago.getSelectedItem().toString();
+
+        String ticket =
+            "==============================\n" +
+            "      EL CRUSTASEO KASKARUDO  \n" +
+            "==============================\n" +
+            "  TICKET DE ORDEN             \n" +
+            "------------------------------\n" +
+            "ID Orden:      " + idOrden     + "\n" +
+            "Cliente:       " + idCliente   + "\n" +
+            "Vehículo:      " + idVehiculo  + "\n" +
+            "Servicio:      " + idServicio  + "\n" +
+            "Fecha ingreso: " + fechaIngreso+ "\n" +
+            "Estado:        " + estado      + "\n" +
+            "------------------------------\n" +
+            "Tipo de pago:  " + tipoPago    + "\n" +
+            "TOTAL:       $" + costo        + "\n" +
+            "==============================\n" +
+            "     ¡Gracias por su visita!  \n" +
+            "==============================";
+
+        JOptionPane.showMessageDialog(panel, ticket, "Ticket de Orden", JOptionPane.INFORMATION_MESSAGE);
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(panel, e.getMessage(), "Aviso", JOptionPane.WARNING_MESSAGE);
+    }
+}  
     
     
     
