@@ -6,10 +6,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorOrden {
-   //array de orden, clientes y vehiculos
+   
     ArrayList<Orden> listaOrden = new ArrayList<>();
     ArrayList<Cliente> listaClientes = new ArrayList<>();
     ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
@@ -17,14 +18,9 @@ public class ControladorOrden {
     private static final Pattern PFECHA = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
     private static final Pattern PCOSTO = Pattern.compile("^[0-9]+(\\.[0-9]{1,2})?$");
     DefaultTableModel mod;
+    
+    //agregue 4 autos para pruebas
     public ControladorOrden() {
-        // Agregar clientes de prueba
-        listaClientes.add(new Cliente(1, "Juan", "Pérez", "555-1001"));
-        listaClientes.add(new Cliente(2, "María", "Gómez", "555-1002"));
-        listaClientes.add(new Cliente(3, "Carlos", "López", "555-1003"));
-        listaClientes.add(new Cliente(4, "Ana", "Martínez", "555-1004"));
-        
-        // Agregar vehículos de prueba
         listaVehiculos.add(new Vehiculo(1, "Toyota", "Corolla", "Rojo", "Sedán", "Aire acondicionado"));
         listaVehiculos.add(new Vehiculo(2, "Honda", "Civic", "Azul", "Sedán", "Automático"));
         listaVehiculos.add(new Vehiculo(3, "Ford", "Fiesta", "Blanco", "Hatchback", "Sin observaciones"));
@@ -121,32 +117,21 @@ public class ControladorOrden {
             if (!PFECHA.matcher(fechaIngreso).matches() || !PFECHA.matcher(fechaSalida).matches()) {
                 throw new Exception("El formato de fecha no es válido.");
             }
-            Orden nuevaOrden = new Orden(idOrden, fechaIngreso, fechaSalida, costoFinal,
-                                         idServicio, idCliente, idVehiculo, obs);
+            Orden nuevaOrden = new Orden(idOrden, fechaIngreso, fechaSalida, costoFinal,idServicio, idCliente, idVehiculo, obs);
             listaOrden.add(nuevaOrden);
             
             String nombreCliente = clienteExistente.getNombre() + " " + clienteExistente.getApellido();
             String descVehiculo = vehiculoExistente.getMarca() + " " + vehiculoExistente.getModelo();
 
             DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
-            modelo.addRow(new Object[]{
-                idOrden, 
-                idCliente + " - " + nombreCliente, 
-                idVehiculo + " - " + descVehiculo, 
-                idServicio, 
-                fechaIngreso, 
-                costoFinal, 
-                "Activa"
-            });
+            modelo.addRow(new Object[]{idOrden, idCliente + " - " + nombreCliente, idVehiculo + " - " + descVehiculo, idServicio, fechaIngreso, costoFinal, "Activa"});
 
-            JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " guardada correctamente.",
-                    "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " guardada correctamente.","Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             limpiar(panel);
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(panel, "Error de formato numérico: " + e.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(panel, "Error de formato numérico: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(panel, e.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
@@ -237,12 +222,8 @@ public class ControladorOrden {
         String tipo = tabla.getValueAt(seleccion, 4).toString();
         String cliente = tabla.getValueAt(seleccion, 5).toString();
         
-        label.setText("Id Auto: " + id + 
-                     "\nMarca: " + marca + 
-                     "\nModelo: " + modelo +
-                     "\nColor: " + color + 
-                     "\nTipo: " + tipo + 
-                     "\nCliente: " + cliente);
+        //es un area de texto pero me dio flojera cambiarlo
+        label.setText("Id Auto: " + id +"\nMarca: " + marca +"\nModelo: " + modelo +"\nColor: " + color + "\nTipo: " + tipo +  "\nCliente: " + cliente);
     }
     public void limpiar(PanelPrincipal panel) {
         panel.Id_orden.setText("");
@@ -262,10 +243,7 @@ public class ControladorOrden {
                 throw new Exception("Selecciona una orden de la tabla para eliminarla.");
             }
 
-            int respuesta = JOptionPane.showConfirmDialog(panel,
-                    "¿Seguro que quieres eliminar esta orden?",
-                    "Confirmar eliminación",
-                    JOptionPane.YES_NO_OPTION);
+            int respuesta = JOptionPane.showConfirmDialog(panel,"¿Seguro que quieres eliminar esta orden?","Confirmar eliminación",JOptionPane.YES_NO_OPTION);
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
@@ -341,7 +319,7 @@ public class ControladorOrden {
             try {
                 idVehiculo = Integer.parseInt(vehiculoTexto);
             } catch (NumberFormatException e) {
-                throw new Exception("El ID del vehículo debe ser un número válido");
+                throw new Exception("El ID del vehículo no es valido");
             }
             
             Vehiculo vehiculoExistente = obtenerVehiculoPorId(idVehiculo);
@@ -350,7 +328,7 @@ public class ControladorOrden {
             }
 
             if (!PCOSTO.matcher(costoTexto).matches()) {
-                throw new Exception("El costo debe ser un número válido. Ej: 200 o 350.50");
+                throw new Exception("El costo debe ser un número válido.");
             }
 
             if (panel.Fingreso.getDate() == null || panel.Fsalida.getDate() == null) {
@@ -390,17 +368,56 @@ public class ControladorOrden {
             modelo.setValueAt(fechaIngreso, fila, 4);
             modelo.setValueAt(costoFinal, fila, 5);
 
-            JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " actualizada correctamente.",
-                    "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " actualizada correctamente.","Éxito", JOptionPane.INFORMATION_MESSAGE);
 
             limpiar(panel);
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(panel, "Error de formato numérico: " + e.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(panel, "Error de formato numérico: " + e.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(panel, e.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
         }
+    }
+
+    public void registrarVehiculo(JTextField txtMarca, JTextField txtModelo, JTextField txtColor, JTextField txtTipo, JTextArea txtObservaciones, JTable tabla) {
+        try {
+            // Obtener datos de los campos
+            String marca = txtMarca.getText().trim();
+            String modelo = txtModelo.getText().trim();
+            String color = txtColor.getText().trim();
+            String tipo = txtTipo.getText().trim();
+            String observaciones = txtObservaciones.getText().trim();
+
+            
+            if (marca.isEmpty() || modelo.isEmpty() || color.isEmpty() || tipo.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor llena todos los campos obligatorios (Marca, Modelo, Color, Tipo)","Error de validación", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            int nuevoId = 1;
+            for (Vehiculo v : listaVehiculos) {
+                if (v.getIdAuto() >= nuevoId) {
+                    nuevoId = v.getIdAuto() + 1;
+                }
+            }
+
+            
+            Vehiculo nuevoVehiculo = new Vehiculo(nuevoId, marca, modelo, color, tipo, observaciones);
+            listaVehiculos.add(nuevoVehiculo);
+            limpiarCamposVehiculo(txtMarca, txtModelo, txtColor, txtTipo, txtObservaciones);
+            cargarVehiculos(tabla);
+
+            JOptionPane.showMessageDialog(null,"Vehículo registrado correctamente.\nID: " + nuevoId,"Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public void limpiarCamposVehiculo(JTextField txtMarca, JTextField txtModelo, JTextField txtColor, JTextField txtTipo, JTextArea txtObservaciones) {
+        txtMarca.setText("");
+        txtModelo.setText("");
+        txtColor.setText("");
+        txtTipo.setText("");
+        txtObservaciones.setText("");
     }
 }
