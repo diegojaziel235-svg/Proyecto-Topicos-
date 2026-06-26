@@ -3,7 +3,7 @@ package proyectotopicos;
 
 public class Orden {
  
-  private int idOrden;
+  private String idOrden;
     private String fechaIngreso;
     private String fechaSalida;
     private double costoFinal;
@@ -15,7 +15,7 @@ public class Orden {
  
     public Orden() {}
  
-    public Orden(int idOrden, String fechaIngreso, String fechaSalida, double costoFinal,
+    public Orden(String idOrden, String fechaIngreso, String fechaSalida, double costoFinal,
                  int idServicio, int idCliente, int idVehiculo, String observaciones) {
         this.idOrden = idOrden;
         this.fechaIngreso = fechaIngreso;
@@ -27,8 +27,8 @@ public class Orden {
         this.observaciones = observaciones;
     }
  
-    public int getIdOrden() { return idOrden; }
-    public void setIdOrden(int idOrden) { this.idOrden = idOrden; }
+    public String getIdOrden() { return idOrden; }
+    public void setIdOrden(String idOrden) { this.idOrden = idOrden; }
  
     public String getFechaIngreso() { return fechaIngreso; }
     public void setFechaIngreso(String fechaIngreso) { this.fechaIngreso = fechaIngreso; }
