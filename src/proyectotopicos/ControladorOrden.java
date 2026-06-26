@@ -1,64 +1,142 @@
-
 package proyectotopicos;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorOrden {
-  
+   //array de orden, clientes y vehiculos
     ArrayList<Orden> listaOrden = new ArrayList<>();
+    ArrayList<Cliente> listaClientes = new ArrayList<>();
+    ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
 
     private static final Pattern PFECHA = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
     private static final Pattern PCOSTO = Pattern.compile("^[0-9]+(\\.[0-9]{1,2})?$");
     DefaultTableModel mod;
+    public ControladorOrden() {
+        // Agregar clientes de prueba
+        listaClientes.add(new Cliente(1, "Juan", "Pérez", "555-1001"));
+        listaClientes.add(new Cliente(2, "María", "Gómez", "555-1002"));
+        listaClientes.add(new Cliente(3, "Carlos", "López", "555-1003"));
+        listaClientes.add(new Cliente(4, "Ana", "Martínez", "555-1004"));
+        
+        // Agregar vehículos de prueba
+        listaVehiculos.add(new Vehiculo(1, "Toyota", "Corolla", "Rojo", "Sedán", "Aire acondicionado"));
+        listaVehiculos.add(new Vehiculo(2, "Honda", "Civic", "Azul", "Sedán", "Automático"));
+        listaVehiculos.add(new Vehiculo(3, "Ford", "Fiesta", "Blanco", "Hatchback", "Sin observaciones"));
+        listaVehiculos.add(new Vehiculo(4, "Chevrolet", "Spark", "Gris", "Hatchback", "Buen estado"));
+    }
+    public String obtenerNombreCliente(int idCliente) {
+        for (Cliente c : listaClientes) {
+            if (c.getIdCliente() == idCliente) {
+                return c.getNombre() + " " + c.getApellido();
+            }
+        }
+        return "Cliente no encontrado";
+    }
     
-   public void guardar(PanelPrincipal panel) {
-
+    public String obtenerDescVehiculo(int idVehiculo) {
+        for (Vehiculo v : listaVehiculos) {
+            if (v.getIdAuto() == idVehiculo) {
+                return v.getMarca() + " " + v.getModelo() + " (" + v.getColor() + ")";
+            }
+        }
+        return "Vehículo no encontrado";
+    }
+    
+    public Cliente obtenerClientePorId(int idCliente) {
+        for (Cliente c : listaClientes) {
+            if (c.getIdCliente() == idCliente) {
+                return c;
+            }
+        }
+        return null;
+    }
+    
+    public Vehiculo obtenerVehiculoPorId(int idVehiculo) {
+        for (Vehiculo v : listaVehiculos) {
+            if (v.getIdAuto() == idVehiculo) {
+                return v;
+            }
+        }
+        return null;
+    }
+    
+    public void guardar(PanelPrincipal panel) {
         try {
             String idOrden = String.format("ORD-%03d", listaOrden.size() + 1);
             panel.Id_orden.setText(idOrden);
             panel.Id_orden.setEditable(false);
 
-            String clienteTexto  = panel.cliente.getText().trim();
+            String clienteTexto = panel.cliente.getText().trim();
             String vehiculoTexto = panel.vehiculo.getText().trim();
-            String costoTexto    = panel.Cfinal.getText().trim();
-            String obs           = panel.observaciones.getText().trim();
+            String costoTexto = panel.Cfinal.getText().trim();
+            String obs = panel.observaciones.getText().trim();
             int idServicio = panel.jComboBox1.getSelectedIndex() + 1;
+
 
             if (clienteTexto.isEmpty() || vehiculoTexto.isEmpty() || costoTexto.isEmpty()) {
                 throw new Exception("Por favor llena todos los campos obligatorios");
             }
 
+            int idCliente;
+            try {
+                idCliente = Integer.parseInt(clienteTexto);
+            } catch (NumberFormatException e) {
+                throw new Exception("El ID del cliente debe ser un número válido");
+            }
+
+            Cliente clienteExistente = obtenerClientePorId(idCliente);
+            if (clienteExistente == null) {
+                throw new Exception("Cliente con ID " + idCliente + " no encontrado. IDs disponibles: " + obtenerIdsClientes());
+            }
+
+            int idVehiculo;
+            try {
+                idVehiculo = Integer.parseInt(vehiculoTexto);
+            } catch (NumberFormatException e) {
+                throw new Exception("El ID del vehículo debe ser un número válido");
+            }
+            Vehiculo vehiculoExistente = obtenerVehiculoPorId(idVehiculo);
+            if (vehiculoExistente == null) {
+                throw new Exception("Vehículo con ID " + idVehiculo + " no encontrado. IDs disponibles: " + obtenerIdsVehiculos());
+            }
+
             if (!PCOSTO.matcher(costoTexto).matches()) {
                 throw new Exception("El costo debe ser un número válido");
             }
-
-            int    idCliente  = Integer.parseInt(clienteTexto);
-            int    idVehiculo = Integer.parseInt(vehiculoTexto);
             double costoFinal = Double.parseDouble(costoTexto);
-
             if (panel.Fingreso.getDate() == null || panel.Fsalida.getDate() == null) {
                 throw new Exception("Selecciona las fechas de ingreso y salida.");
             }
 
             java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
             String fechaIngreso = sdf.format(panel.Fingreso.getDate());
-            String fechaSalida  = sdf.format(panel.Fsalida.getDate());
+            String fechaSalida = sdf.format(panel.Fsalida.getDate());
 
             if (!PFECHA.matcher(fechaIngreso).matches() || !PFECHA.matcher(fechaSalida).matches()) {
                 throw new Exception("El formato de fecha no es válido.");
             }
-
             Orden nuevaOrden = new Orden(idOrden, fechaIngreso, fechaSalida, costoFinal,
                                          idServicio, idCliente, idVehiculo, obs);
             listaOrden.add(nuevaOrden);
+            
+            String nombreCliente = clienteExistente.getNombre() + " " + clienteExistente.getApellido();
+            String descVehiculo = vehiculoExistente.getMarca() + " " + vehiculoExistente.getModelo();
 
             DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
             modelo.addRow(new Object[]{
-                idOrden, idCliente, idVehiculo, idServicio, fechaIngreso, costoFinal, "Activa"
+                idOrden, 
+                idCliente + " - " + nombreCliente, 
+                idVehiculo + " - " + descVehiculo, 
+                idServicio, 
+                fechaIngreso, 
+                costoFinal, 
+                "Activa"
             });
 
             JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " guardada correctamente.",
@@ -74,30 +152,109 @@ public class ControladorOrden {
             JOptionPane.showMessageDialog(panel, e.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
         }
     }
-   
-    public void tablaVe(JTable tabla){
-        mod=new DefaultTableModel();
+
+    public String obtenerIdsClientes() {
+        StringBuilder sb = new StringBuilder();
+        for (Cliente c : listaClientes) {
+            sb.append(c.getIdCliente()).append(", ");
+        }
+        return sb.toString();
+    }
+    
+    public String obtenerIdsVehiculos() {
+        StringBuilder sb = new StringBuilder();
+        for (Vehiculo v : listaVehiculos) {
+            sb.append(v.getIdAuto()).append(", ");
+        }
+        return sb.toString();
+    }
+    
+    public void cargarVehiculos(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        modelo.setRowCount(0);
+        
+        for (Vehiculo v : listaVehiculos) {
+            String nombreCliente = "No asignado";
+            modelo.addRow(new Object[]{
+                v.getIdAuto(),
+                v.getMarca(),
+                v.getModelo(),
+                v.getColor(),
+                v.getTipo(),
+                nombreCliente
+            });
+        }
+    }
+    
+    public void cargarClientes(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        modelo.setRowCount(0);
+        
+        for (Cliente c : listaClientes) {
+            modelo.addRow(new Object[]{
+                c.getIdCliente(),
+                c.getNombre(),
+                c.getApellido(),
+                c.getTelefono()
+            });
+        }
+    }
+
+    public void tablaVe(JTable tabla) {
+        mod = new DefaultTableModel();
         mod.addColumn("ID Auto");
         mod.addColumn("Marca");
         mod.addColumn("Modelo");
         mod.addColumn("Color");
         mod.addColumn("Tipo");
+        mod.addColumn("Cliente");
         tabla.setModel(mod);
+        cargarVehiculos(tabla);
     }
-
+    public void tablaClientes(JTable tabla) {
+        mod = new DefaultTableModel();
+        mod.addColumn("ID Cliente");
+        mod.addColumn("Nombre");
+        mod.addColumn("Apellido");
+        mod.addColumn("Teléfono");
+        tabla.setModel(mod);
+        cargarClientes(tabla);
+    }
+    public void seleccionV(JTable tabla, JTextArea label) {
+        tabla.getSelectionModel().addListSelectionListener(e -> {
+            int seleccion = tabla.getSelectedRow();
+            if (seleccion != -1) {
+                camposVehiculo(seleccion, tabla, label);
+            }
+        });
+    }
+    
+    public void camposVehiculo(int seleccion, JTable tabla, JTextArea label) {
+        String id = tabla.getValueAt(seleccion, 0).toString();
+        String marca = tabla.getValueAt(seleccion, 1).toString();
+        String modelo = tabla.getValueAt(seleccion, 2).toString();
+        String color = tabla.getValueAt(seleccion, 3).toString();
+        String tipo = tabla.getValueAt(seleccion, 4).toString();
+        String cliente = tabla.getValueAt(seleccion, 5).toString();
+        
+        label.setText("Id Auto: " + id + 
+                     "\nMarca: " + marca + 
+                     "\nModelo: " + modelo +
+                     "\nColor: " + color + 
+                     "\nTipo: " + tipo + 
+                     "\nCliente: " + cliente);
+    }
     public void limpiar(PanelPrincipal panel) {
-         panel.Id_orden.setText("");
-         panel.cliente.setText("");
-         panel.vehiculo.setText("");
-         panel.Cfinal.setText("");
-         panel.observaciones.setText("");
-         panel.Fingreso.setDate(null);
-         panel.Fsalida.setDate(null);
-         panel.jComboBox1.setSelectedIndex(0);
+        panel.Id_orden.setText("");
+        panel.cliente.setText("");
+        panel.vehiculo.setText("");
+        panel.Cfinal.setText("");
+        panel.observaciones.setText("");
+        panel.Fingreso.setDate(null);
+        panel.Fsalida.setDate(null);
+        panel.jComboBox1.setSelectedIndex(0);
     }
-
     public void eliminar(PanelPrincipal panel) {
-
         try {
             int filaSeleccionada = panel.jTable1.getSelectedRow();
 
@@ -127,119 +284,123 @@ public class ControladorOrden {
             JOptionPane.showMessageDialog(panel, e.getMessage(), "Aviso", JOptionPane.WARNING_MESSAGE);
         }
     }
-    
-    // Carga los datos de la fila seleccionada en los campos del formulario
-public void cargarDatos(PanelPrincipal panel) {
-    int fila = panel.jTable1.getSelectedRow();
-    if (fila == -1) return;
-
-    DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
-
-    panel.Id_orden.setText(modelo.getValueAt(fila, 0).toString());
-    panel.cliente.setText(modelo.getValueAt(fila, 1).toString());
-    panel.vehiculo.setText(modelo.getValueAt(fila, 2).toString());
-    panel.Cfinal.setText(modelo.getValueAt(fila, 5).toString());
-}
-
-// Actualiza la orden seleccionada con los datos editados
-public void actualizar(PanelPrincipal panel) {
-
-    try {
+    public void cargarDatos(PanelPrincipal panel) {
         int fila = panel.jTable1.getSelectedRow();
+        if (fila == -1) return;
 
-        if (fila == -1) {
-            throw new Exception("Selecciona una orden de la tabla para actualizar.");
-        }
-
-        String clienteTexto  = panel.cliente.getText().trim();
-        String vehiculoTexto = panel.vehiculo.getText().trim();
-        String costoTexto    = panel.Cfinal.getText().trim();
-        String obs           = panel.observaciones.getText().trim();
-        int idServicio = panel.jComboBox1.getSelectedIndex() + 1;
-
-        if (clienteTexto.isEmpty() || vehiculoTexto.isEmpty() || costoTexto.isEmpty()) {
-            throw new Exception("Por favor llena todos los campos obligatorios.");
-        }
-
-        if (!PCOSTO.matcher(costoTexto).matches()) {
-            throw new Exception("El costo debe ser un número válido. Ej: 200 o 350.50");
-        }
-
-        if (panel.Fingreso.getDate() == null || panel.Fsalida.getDate() == null) {
-            throw new Exception("Selecciona las fechas de ingreso y salida.");
-        }
-
-        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
-        String fechaIngreso = sdf.format(panel.Fingreso.getDate());
-        String fechaSalida  = sdf.format(panel.Fsalida.getDate());
-
-        int    idCliente  = Integer.parseInt(clienteTexto);
-        int    idVehiculo = Integer.parseInt(vehiculoTexto);
-        double costoFinal = Double.parseDouble(costoTexto);
-
-        // Obtener el ID de la orden seleccionada
         DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
-        String idOrden = modelo.getValueAt(fila, 0).toString();
 
-        // Actualizar en el ArrayList
-        for (Orden o : listaOrden) {
-            if (o.getIdOrden().equals(idOrden)) {
-                o.setIdCliente(idCliente);
-                o.setIdVehiculo(idVehiculo);
-                o.setCostoFinal(costoFinal);
-                o.setIdServicio(idServicio);
-                o.setFechaIngreso(fechaIngreso);
-                o.setFechaSalida(fechaSalida);
-                o.setObservaciones(obs);
-                break;
-            }
+        panel.Id_orden.setText(modelo.getValueAt(fila, 0).toString());
+
+        String clienteInfo = modelo.getValueAt(fila, 1).toString();
+        String idClienteStr = clienteInfo.split(" - ")[0];
+        panel.cliente.setText(idClienteStr);
+        String vehiculoInfo = modelo.getValueAt(fila, 2).toString();
+        String idVehiculoStr = vehiculoInfo.split(" - ")[0];
+        panel.vehiculo.setText(idVehiculoStr);
+        
+        panel.Cfinal.setText(modelo.getValueAt(fila, 5).toString());
+        
+        try {
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
+            String fechaIngreso = modelo.getValueAt(fila, 4).toString();
+            panel.Fingreso.setDate(sdf.parse(fechaIngreso));
+        } catch (Exception e) {
+            
         }
-
-        // Actualizar la fila en la tabla
-        modelo.setValueAt(idCliente,   fila, 1);
-        modelo.setValueAt(idVehiculo,  fila, 2);
-        modelo.setValueAt(idServicio,  fila, 3);
-        modelo.setValueAt(fechaIngreso,fila, 4);
-        modelo.setValueAt(costoFinal,  fila, 5);
-
-        JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " actualizada correctamente.",
-                "Éxito", JOptionPane.INFORMATION_MESSAGE);
-
-        limpiar(panel);
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(panel, "Error de formato numérico: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(panel, e.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
     }
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public void actualizar(PanelPrincipal panel) {
+        try {
+            int fila = panel.jTable1.getSelectedRow();
+
+            if (fila == -1) {
+                throw new Exception("Selecciona una orden de la tabla para actualizar.");
+            }
+
+            String clienteTexto = panel.cliente.getText().trim();
+            String vehiculoTexto = panel.vehiculo.getText().trim();
+            String costoTexto = panel.Cfinal.getText().trim();
+            String obs = panel.observaciones.getText().trim();
+            int idServicio = panel.jComboBox1.getSelectedIndex() + 1;
+
+            if (clienteTexto.isEmpty() || vehiculoTexto.isEmpty() || costoTexto.isEmpty()) {
+                throw new Exception("Por favor llena todos los campos obligatorios.");
+            }
+            int idCliente;
+            try {
+                idCliente = Integer.parseInt(clienteTexto);
+            } catch (NumberFormatException e) {
+                throw new Exception("El ID del cliente debe ser un número válido");
+            }
+            
+            Cliente clienteExistente = obtenerClientePorId(idCliente);
+            if (clienteExistente == null) {
+                throw new Exception("Cliente con ID " + idCliente + " no encontrado.");
+            }
+            int idVehiculo;
+            try {
+                idVehiculo = Integer.parseInt(vehiculoTexto);
+            } catch (NumberFormatException e) {
+                throw new Exception("El ID del vehículo debe ser un número válido");
+            }
+            
+            Vehiculo vehiculoExistente = obtenerVehiculoPorId(idVehiculo);
+            if (vehiculoExistente == null) {
+                throw new Exception("Vehículo con ID " + idVehiculo + " no encontrado.");
+            }
+
+            if (!PCOSTO.matcher(costoTexto).matches()) {
+                throw new Exception("El costo debe ser un número válido. Ej: 200 o 350.50");
+            }
+
+            if (panel.Fingreso.getDate() == null || panel.Fsalida.getDate() == null) {
+                throw new Exception("Selecciona las fechas de ingreso y salida.");
+            }
+
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
+            String fechaIngreso = sdf.format(panel.Fingreso.getDate());
+            String fechaSalida = sdf.format(panel.Fsalida.getDate());
+
+            double costoFinal = Double.parseDouble(costoTexto);
+
+            DefaultTableModel modelo = (DefaultTableModel) panel.jTable1.getModel();
+            String idOrden = modelo.getValueAt(fila, 0).toString();
+
+            // Actualizar en el ArrayList
+            for (Orden o : listaOrden) {
+                if (o.getIdOrden().equals(idOrden)) {
+                    o.setIdCliente(idCliente);
+                    o.setIdVehiculo(idVehiculo);
+                    o.setCostoFinal(costoFinal);
+                    o.setIdServicio(idServicio);
+                    o.setFechaIngreso(fechaIngreso);
+                    o.setFechaSalida(fechaSalida);
+                    o.setObservaciones(obs);
+                    break;
+                }
+            }
+
+            // Actualizar la fila en la tabla
+            String nombreCliente = clienteExistente.getNombre() + " " + clienteExistente.getApellido();
+            String descVehiculo = vehiculoExistente.getMarca() + " " + vehiculoExistente.getModelo();
+            
+            modelo.setValueAt(idCliente + " - " + nombreCliente, fila, 1);
+            modelo.setValueAt(idVehiculo + " - " + descVehiculo, fila, 2);
+            modelo.setValueAt(idServicio, fila, 3);
+            modelo.setValueAt(fechaIngreso, fila, 4);
+            modelo.setValueAt(costoFinal, fila, 5);
+
+            JOptionPane.showMessageDialog(panel, "Orden " + idOrden + " actualizada correctamente.",
+                    "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+            limpiar(panel);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(panel, "Error de formato numérico: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(panel, e.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
+        }
+    }
 }
