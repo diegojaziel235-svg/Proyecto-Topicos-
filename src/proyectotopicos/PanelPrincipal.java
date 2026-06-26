@@ -1,6 +1,7 @@
 
 package proyectotopicos;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 
@@ -104,9 +105,15 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
         jLabel10.setText("Estado");
 
+        cliente.setBackground(new java.awt.Color(153, 204, 255));
+
         jLabel4.setText("Vehiculo ");
+
+        vehiculo.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel6.setText("Fecha Ingreso ");
 
@@ -114,15 +121,20 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         jLabel8.setText("Costo final ");
 
+        Cfinal.setBackground(new java.awt.Color(153, 255, 51));
+
         jLabel1.setText("       DATOS DE ÓRDEN");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel2.setText("ID ORDEN");
 
+        Id_orden.setBackground(new java.awt.Color(153, 204, 255));
+
         jLabel3.setText("Cliente");
 
         jLabel9.setText("Observaciones");
 
+        jTable1.setBackground(new java.awt.Color(153, 255, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -136,28 +148,60 @@ public class PanelPrincipal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        Guardar.setBackground(new java.awt.Color(255, 255, 153));
         Guardar.setText("GUARDAR");
+        Guardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                GuardarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                GuardarMouseExited(evt);
+            }
+        });
         Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarActionPerformed(evt);
             }
         });
 
+        eliminar.setBackground(new java.awt.Color(153, 153, 255));
         eliminar.setText("ELIMINAR");
+        eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                eliminarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                eliminarMouseExited(evt);
+            }
+        });
         eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarActionPerformed(evt);
             }
         });
 
+        observaciones.setBackground(new java.awt.Color(153, 204, 255));
+
+        jComboBox1.setBackground(new java.awt.Color(153, 204, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Listo", "En proceso", "finalizado" }));
 
+        jButton1.setBackground(new java.awt.Color(255, 153, 153));
         jButton1.setText("ACTUALIZAR");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        Fingreso.setBackground(new java.awt.Color(153, 204, 255));
 
         tipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Trasnferencia", "Tarjeta" }));
         tipoPago.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +212,16 @@ public class PanelPrincipal extends javax.swing.JFrame {
 
         jLabel5.setText("Tipo de pago");
 
+        jToggleButton1.setBackground(new java.awt.Color(255, 51, 51));
         jToggleButton1.setText("GENERAR TICKET");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseExited(evt);
+            }
+        });
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -509,6 +562,38 @@ public class PanelPrincipal extends javax.swing.JFrame {
                        //controladorOrden.generarTicket(this);
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void GuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarMouseEntered
+        Guardar.setBackground(Color.orange);
+    }//GEN-LAST:event_GuardarMouseEntered
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        jButton1.setBackground(Color.red);
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void eliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseEntered
+        eliminar.setBackground(Color.blue);
+    }//GEN-LAST:event_eliminarMouseEntered
+
+    private void GuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarMouseExited
+        Guardar.setBackground(Color.yellow);
+    }//GEN-LAST:event_GuardarMouseExited
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        jButton1.setBackground(Color.pink);
+    }//GEN-LAST:event_jButton1MouseExited
+
+    private void eliminarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseExited
+        eliminar.setBackground(new Color(51, 204, 255));
+    }//GEN-LAST:event_eliminarMouseExited
+
+    private void jToggleButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseEntered
+        jToggleButton1.setBackground(new Color(0, 204, 0));
+    }//GEN-LAST:event_jToggleButton1MouseEntered
+
+    private void jToggleButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseExited
+        jToggleButton1.setBackground(new Color (255,0,0));
+    }//GEN-LAST:event_jToggleButton1MouseExited
 
 
     /**
