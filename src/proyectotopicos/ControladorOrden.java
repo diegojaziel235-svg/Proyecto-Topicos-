@@ -4,6 +4,7 @@ package proyectotopicos;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorOrden {
@@ -12,6 +13,7 @@ public class ControladorOrden {
 
     private static final Pattern PFECHA = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
     private static final Pattern PCOSTO = Pattern.compile("^[0-9]+(\\.[0-9]{1,2})?$");
+    DefaultTableModel mod;
     
    public void guardar(PanelPrincipal panel) {
 
@@ -71,6 +73,16 @@ public class ControladorOrden {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(panel, e.getMessage(), "Error de validación", JOptionPane.WARNING_MESSAGE);
         }
+    }
+   
+    public void tablaVe(JTable tabla){
+        mod=new DefaultTableModel();
+        mod.addColumn("ID Auto");
+        mod.addColumn("Marca");
+        mod.addColumn("Modelo");
+        mod.addColumn("Color");
+        mod.addColumn("Tipo");
+        tabla.setModel(mod);
     }
 
     public void limpiar(PanelPrincipal panel) {
