@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorOrden {
-   
+   //array de orden, clientes y vehiculos
     ArrayList<Orden> listaOrden = new ArrayList<>();
     ArrayList<Cliente> listaClientes = new ArrayList<>();
     ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
@@ -21,6 +21,8 @@ public class ControladorOrden {
     
     //agregue 4 autos para pruebas
     public ControladorOrden() {
+
+        // Agregar vehículos de prueba
         listaVehiculos.add(new Vehiculo(1, "Toyota", "Corolla", "Rojo", "Sedán", "Aire acondicionado"));
         listaVehiculos.add(new Vehiculo(2, "Honda", "Civic", "Azul", "Sedán", "Automático"));
         listaVehiculos.add(new Vehiculo(3, "Ford", "Fiesta", "Blanco", "Hatchback", "Sin observaciones"));
@@ -391,7 +393,8 @@ public class ControladorOrden {
 
             
             if (marca.isEmpty() || modelo.isEmpty() || color.isEmpty() || tipo.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Por favor llena todos los campos obligatorios (Marca, Modelo, Color, Tipo)","Error de validación", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, 
+                    "Por favor llena todos los campos obligatorios (Marca, Modelo, Color, Tipo)","Error de validación", JOptionPane.WARNING_MESSAGE);
                 return;
             }
             int nuevoId = 1;
@@ -407,13 +410,16 @@ public class ControladorOrden {
             limpiarCamposVehiculo(txtMarca, txtModelo, txtColor, txtTipo, txtObservaciones);
             cargarVehiculos(tabla);
 
-            JOptionPane.showMessageDialog(null,"Vehículo registrado correctamente.\nID: " + nuevoId,"Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, 
+                "Vehículo registrado correctamente.\nID: " + nuevoId,"Éxito", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    public void limpiarCamposVehiculo(JTextField txtMarca, JTextField txtModelo, JTextField txtColor, JTextField txtTipo, JTextArea txtObservaciones) {
+    public void limpiarCamposVehiculo(JTextField txtMarca, JTextField txtModelo, 
+                                      JTextField txtColor, JTextField txtTipo, 
+                                      JTextArea txtObservaciones) {
         txtMarca.setText("");
         txtModelo.setText("");
         txtColor.setText("");
