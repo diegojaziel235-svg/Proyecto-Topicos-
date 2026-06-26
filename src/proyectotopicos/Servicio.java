@@ -39,7 +39,5 @@ public class Servicio {
         return "Servicio{idServicio=" + idServicio + ", nombre='" + nombre + "', precio=" + precio +
                ", duracion=" + duracion + ", observaciones='" + observaciones + "'}";
     }   
-   
-    
-    
+  
 }
