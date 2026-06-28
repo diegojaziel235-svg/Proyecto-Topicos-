@@ -1,6 +1,7 @@
 
 package proyectotopicos;
 
+<<<<<<< HEAD
 import controlador.CCliente;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -11,17 +12,29 @@ public class PanelPrincipal extends javax.swing.JFrame {
      private CCliente controlador = new CCliente();
         private javax.swing.table.DefaultTableModel modeloTabla;
         private int idClienteSeleccionado = -1;
+=======
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
+
+public class PanelPrincipal extends javax.swing.JFrame {
+
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
      ControladorOrden controladorOrden = new ControladorOrden();
      ControladorServicio controladorServicio = new ControladorServicio(); // ← AGREGA ESTA
 
      
     public PanelPrincipal() {
+<<<<<<< HEAD
     initComponents();  
     modeloTabla = (javax.swing.table.DefaultTableModel) tabla1.getModel();
         configurarEstadoInicial();
         configurarValidaciones();
         configurarEventos();
         configurarPlaceholders();
+=======
+    initComponents();    
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     btnGuardarS.addActionListener(e -> controladorServicio.guardar(this));
     btnActualizarS.addActionListener(e -> controladorServicio.actualizar(this));
     btnEliminarS.addActionListener(e -> controladorServicio.eliminar(this));
@@ -70,6 +83,7 @@ tablac.addMouseListener(new java.awt.event.MouseAdapter() {
     });
      
     }
+<<<<<<< HEAD
    
 private void configurarEstadoInicial() {
     btnGuardar.setEnabled(false);
@@ -407,6 +421,8 @@ private void configurarPlaceholders() {
         }
     });
 }
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
    
     @SuppressWarnings("unchecked")
@@ -461,6 +477,7 @@ private void configurarPlaceholders() {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
+<<<<<<< HEAD
         jPanel9 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
@@ -487,6 +504,8 @@ private void configurarPlaceholders() {
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnAsignar = new javax.swing.JButton();
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         jPanel4 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         txtIdServicio = new javax.swing.JTextField();
@@ -500,23 +519,42 @@ private void configurarPlaceholders() {
         txtObservacionesServicio = new javax.swing.JTextField();
         tablac = new javax.swing.JScrollPane();
         tablaS = new javax.swing.JTable();
+<<<<<<< HEAD
         btnGuardarS = new javax.swing.JButton();
         btnActualizarS = new javax.swing.JButton();
+=======
+        jLabel23 = new javax.swing.JLabel();
+        btnGuardarS = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        btnActualizarS = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         btnEliminarS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+<<<<<<< HEAD
         jTabbedPane1.setBackground(new java.awt.Color(153, 255, 153));
 
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel10.setText("Estado");
 
+<<<<<<< HEAD
         cliente.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel4.setText("Vehiculo ");
 
         vehiculo.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        cliente.setBackground(new java.awt.Color(153, 204, 255));
+
+        jLabel4.setText("Vehiculo ");
+
+        vehiculo.setBackground(new java.awt.Color(153, 204, 255));
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
         jLabel6.setText("Fecha Ingreso ");
 
@@ -531,7 +569,11 @@ private void configurarPlaceholders() {
 
         jLabel2.setText("ID ORDEN");
 
+<<<<<<< HEAD
         Id_orden.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        Id_orden.setBackground(new java.awt.Color(153, 204, 255));
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
         jLabel3.setText("Cliente");
 
@@ -583,9 +625,15 @@ private void configurarPlaceholders() {
             }
         });
 
+<<<<<<< HEAD
         observaciones.setBackground(new java.awt.Color(204, 204, 255));
 
         jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        observaciones.setBackground(new java.awt.Color(153, 204, 255));
+
+        jComboBox1.setBackground(new java.awt.Color(153, 204, 255));
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Listo", "En proceso", "finalizado" }));
 
         jButton1.setBackground(new java.awt.Color(255, 153, 153));
@@ -606,9 +654,12 @@ private void configurarPlaceholders() {
 
         Fingreso.setBackground(new java.awt.Color(153, 204, 255));
 
+<<<<<<< HEAD
         Fsalida.setBackground(new java.awt.Color(204, 204, 255));
 
         tipoPago.setBackground(new java.awt.Color(204, 204, 255));
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         tipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Trasnferencia", "Tarjeta" }));
         tipoPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -752,12 +803,16 @@ private void configurarPlaceholders() {
 
         jTabbedPane1.addTab("ORDEN", jPanel1);
 
+<<<<<<< HEAD
         jPanel3.setBackground(new java.awt.Color(204, 255, 204));
 
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         jScrollPane2.setViewportView(tablaV);
 
         jLabel11.setText("Vehiculos");
 
+<<<<<<< HEAD
         jButton2.setBackground(new java.awt.Color(102, 255, 102));
         jButton2.setText("Guardar");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -795,6 +850,15 @@ private void configurarPlaceholders() {
                 buscarMouseExited(evt);
             }
         });
+=======
+        jButton2.setText("Guardar");
+
+        jButton3.setText("Limpiar");
+
+        jLabel17.setText("Buscador");
+
+        buscar.setText("Buscar");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarActionPerformed(evt);
@@ -803,6 +867,7 @@ private void configurarPlaceholders() {
 
         jLabel12.setText("Marca");
 
+<<<<<<< HEAD
         jTextField2.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel13.setText("Modelo");
@@ -811,15 +876,24 @@ private void configurarPlaceholders() {
 
         jTextField4.setBackground(new java.awt.Color(204, 204, 255));
 
+=======
+        jLabel13.setText("Modelo");
+
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         jLabel14.setText("Color");
 
         jLabel15.setText("Tipo");
 
+<<<<<<< HEAD
         jTextField5.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel16.setText("Observaciones");
 
         jTextArea1.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        jLabel16.setText("Observaciones");
+
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
@@ -845,7 +919,11 @@ private void configurarPlaceholders() {
                             .addComponent(jTextField2)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jButton2)
+<<<<<<< HEAD
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+=======
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                                 .addComponent(jButton3))
                             .addComponent(jTextField3)
                             .addComponent(jTextField4)
@@ -858,8 +936,13 @@ private void configurarPlaceholders() {
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(19, 19, 19))))
+=======
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(371, 371, 371)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -902,11 +985,16 @@ private void configurarPlaceholders() {
                             .addComponent(jButton2)
                             .addComponent(jButton3)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addContainerGap(97, Short.MAX_VALUE))
+=======
+                .addContainerGap(36, Short.MAX_VALUE))
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         );
 
         jTabbedPane1.addTab("VEHICULOS", jPanel3);
 
+<<<<<<< HEAD
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1148,11 +1236,14 @@ private void configurarPlaceholders() {
                 .addContainerGap())
         );
 
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 828, Short.MAX_VALUE)
+<<<<<<< HEAD
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1191,15 +1282,27 @@ private void configurarPlaceholders() {
                             .addGap(10, 10, 10)
                             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 0, Short.MAX_VALUE)))
+=======
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 539, Short.MAX_VALUE)
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         );
 
         jTabbedPane1.addTab("CLIENTES", jPanel2);
 
+<<<<<<< HEAD
         jPanel4.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel18.setText("ID SERVICIO");
 
         txtIdServicio.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        jLabel18.setText("ID SERVICIO");
+
+        txtIdServicio.setText("jTextField1");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         txtIdServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdServicioActionPerformed(evt);
@@ -1208,7 +1311,11 @@ private void configurarPlaceholders() {
 
         jLabel19.setText("NOMBRE DEL TIPO DE SERVICIO");
 
+<<<<<<< HEAD
         txtNombreServicio.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        txtNombreServicio.setText("jTextField6");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         txtNombreServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreServicioActionPerformed(evt);
@@ -1217,11 +1324,19 @@ private void configurarPlaceholders() {
 
         jLabel20.setText("PRECIO");
 
+<<<<<<< HEAD
         txtPrecioServicio.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel21.setText("DURACION: ");
 
         txtDuracionServicio.setBackground(new java.awt.Color(204, 204, 255));
+=======
+        txtPrecioServicio.setText("jTextField7");
+
+        jLabel21.setText("DURACION: ");
+
+        txtDuracionServicio.setText("jTextField8");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         txtDuracionServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDuracionServicioActionPerformed(evt);
@@ -1230,6 +1345,7 @@ private void configurarPlaceholders() {
 
         jLabel22.setText("OBSERVACION ");
 
+<<<<<<< HEAD
         txtObservacionesServicio.setBackground(new java.awt.Color(204, 204, 255));
         txtObservacionesServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1238,6 +1354,9 @@ private void configurarPlaceholders() {
         });
 
         tablac.setBackground(new java.awt.Color(153, 153, 255));
+=======
+        txtObservacionesServicio.setText("jTextField9");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
         tablaS.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1252,21 +1371,39 @@ private void configurarPlaceholders() {
         ));
         tablac.setViewportView(tablaS);
 
+<<<<<<< HEAD
         btnGuardarS.setText("GUARDAR");
+=======
+        jLabel23.setText("Guardar");
+
+        btnGuardarS.setText("jButton4");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         btnGuardarS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarSActionPerformed(evt);
             }
         });
 
+<<<<<<< HEAD
         btnActualizarS.setText("ACTUALIZAR");
+=======
+        jLabel24.setText("Actualizar");
+
+        btnActualizarS.setText("jButton5");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         btnActualizarS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarSActionPerformed(evt);
             }
         });
 
+<<<<<<< HEAD
         btnEliminarS.setText("ELIMINAR");
+=======
+        jLabel25.setText("Eliminar");
+
+        btnEliminarS.setText("jButton6");
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         btnEliminarS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarSActionPerformed(evt);
@@ -1281,6 +1418,27 @@ private void configurarPlaceholders() {
                 .addGap(62, 62, 62)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+=======
+                    .addComponent(txtIdServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtObservacionesServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnGuardarS))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnActualizarS))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminarS))))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1290,6 +1448,7 @@ private void configurarPlaceholders() {
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPrecioServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
+<<<<<<< HEAD
                         .addComponent(tablac, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtIdServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -1302,6 +1461,9 @@ private void configurarPlaceholders() {
                         .addComponent(btnActualizarS)
                         .addGap(42, 42, 42)
                         .addComponent(btnEliminarS)))
+=======
+                        .addComponent(tablac, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -1327,6 +1489,7 @@ private void configurarPlaceholders() {
                         .addComponent(txtDuracionServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(tablac, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
+<<<<<<< HEAD
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1339,6 +1502,25 @@ private void configurarPlaceholders() {
                             .addComponent(btnActualizarS)
                             .addComponent(btnEliminarS))))
                 .addContainerGap(90, Short.MAX_VALUE))
+=======
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtObservacionesServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(btnGuardarS))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnActualizarS))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(btnEliminarS))))
+                .addContainerGap(29, Short.MAX_VALUE))
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
         );
 
         jTabbedPane1.addTab("SERVICIOS", jPanel4);
@@ -1363,8 +1545,13 @@ private void configurarPlaceholders() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+<<<<<<< HEAD
                  controladorOrden.setListaClientes(controlador.obtenerTodos());
     controladorOrden.guardar(this);
+=======
+            controladorOrden.guardar(this);
+
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
            // controladorOrden.seleccionV(tablaV, datos);
         
     }//GEN-LAST:event_GuardarActionPerformed
@@ -1375,8 +1562,13 @@ private void configurarPlaceholders() {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+<<<<<<< HEAD
       controladorOrden.setListaClientes(controlador.obtenerTodos());
     controladorOrden.actualizar(this);        
+=======
+            controladorOrden.actualizar(this);
+        
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -1416,8 +1608,12 @@ private void configurarPlaceholders() {
     }//GEN-LAST:event_tipoPagoActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+<<<<<<< HEAD
                            controladorOrden.generarTicket(this);
 
+=======
+                       //controladorOrden.generarTicket(this);
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -1477,6 +1673,7 @@ private void configurarPlaceholders() {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarSActionPerformed
 
+<<<<<<< HEAD
     private void buscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarMouseEntered
         buscar.setBackground(new Color (255, 102,0));
     }//GEN-LAST:event_buscarMouseEntered
@@ -1510,11 +1707,14 @@ private void configurarPlaceholders() {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarActionPerformed
 
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+<<<<<<< HEAD
     /* Establecer el diseño estético Nimbus por defecto */
     try {
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1535,6 +1735,38 @@ private void configurarPlaceholders() {
         }
     });
 }
+=======
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PanelPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PanelPrincipal().setVisible(true);
+            }
+        });
+    }
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField Cfinal;
@@ -1543,6 +1775,7 @@ private void configurarPlaceholders() {
     public javax.swing.JButton Guardar;
     public javax.swing.JTextField Id_orden;
     public javax.swing.JButton btnActualizarS;
+<<<<<<< HEAD
     private javax.swing.JButton btnAsignar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
@@ -1550,6 +1783,10 @@ private void configurarPlaceholders() {
     private javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnGuardarS;
     private javax.swing.JButton btnModificar;
+=======
+    public javax.swing.JButton btnEliminarS;
+    public javax.swing.JButton btnGuardarS;
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     private javax.swing.JTextField buscador;
     private javax.swing.JButton buscar;
     public javax.swing.JTextField cliente;
@@ -1573,6 +1810,7 @@ private void configurarPlaceholders() {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1582,6 +1820,12 @@ private void configurarPlaceholders() {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+=======
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel3;
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1592,6 +1836,7 @@ private void configurarPlaceholders() {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -1601,6 +1846,11 @@ private void configurarPlaceholders() {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+=======
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
@@ -1609,13 +1859,18 @@ private void configurarPlaceholders() {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JToggleButton jToggleButton1;
+<<<<<<< HEAD
     private javax.swing.JLabel lblCantidad;
     public javax.swing.JTextField observaciones;
     private javax.swing.JTable tabla1;
+=======
+    public javax.swing.JTextField observaciones;
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     public javax.swing.JTable tablaS;
     private javax.swing.JTable tablaV;
     public javax.swing.JScrollPane tablac;
     public javax.swing.JComboBox<String> tipoPago;
+<<<<<<< HEAD
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtDuracionServicio;
@@ -1626,6 +1881,13 @@ private void configurarPlaceholders() {
     public javax.swing.JTextField txtObservacionesServicio;
     public javax.swing.JTextField txtPrecioServicio;
     private javax.swing.JTextField txtTelefono;
+=======
+    public javax.swing.JTextField txtDuracionServicio;
+    public javax.swing.JTextField txtIdServicio;
+    public javax.swing.JTextField txtNombreServicio;
+    public javax.swing.JTextField txtObservacionesServicio;
+    public javax.swing.JTextField txtPrecioServicio;
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     public javax.swing.JTextField vehiculo;
     // End of variables declaration//GEN-END:variables
 

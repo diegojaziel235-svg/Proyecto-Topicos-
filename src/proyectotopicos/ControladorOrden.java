@@ -1,6 +1,9 @@
 package proyectotopicos;
 
+<<<<<<< HEAD
 import controlador.CCliente;
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import javax.swing.JLabel;
@@ -9,12 +12,19 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+<<<<<<< HEAD
 import modelo.Cliente;
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
 public class ControladorOrden {
    //array de orden, clientes y vehiculos
     ArrayList<Orden> listaOrden = new ArrayList<>();
+<<<<<<< HEAD
      ArrayList<modelo.Cliente> listaClientes = new ArrayList<>();
+=======
+    ArrayList<Cliente> listaClientes = new ArrayList<>();
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
 
     private static final Pattern PFECHA = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
@@ -30,6 +40,7 @@ public class ControladorOrden {
         listaVehiculos.add(new Vehiculo(3, "Ford", "Fiesta", "Blanco", "Hatchback", "Sin observaciones","En proceso"));
         listaVehiculos.add(new Vehiculo(4, "Chevrolet", "Spark", "Gris", "Hatchback", "Buen estado","Finalizado"));
     }
+<<<<<<< HEAD
    public String obtenerNombreCliente(int idCliente) {
     for (modelo.Cliente c : listaClientes) {
         if (c.getIdCliente() == idCliente) {
@@ -38,6 +49,16 @@ public class ControladorOrden {
     }
     return "Cliente no encontrado";
 }
+=======
+    public String obtenerNombreCliente(int idCliente) {
+        for (Cliente c : listaClientes) {
+            if (c.getIdCliente() == idCliente) {
+                return c.getNombre() + " " + c.getApellido();
+            }
+        }
+        return "Cliente no encontrado";
+    }
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     
     public String obtenerDescVehiculo(int idVehiculo) {
         for (Vehiculo v : listaVehiculos) {
@@ -48,12 +69,23 @@ public class ControladorOrden {
         return "Vehículo no encontrado";
     }
     
+<<<<<<< HEAD
     public modelo.Cliente obtenerClientePorId(int idCliente) {
     for (modelo.Cliente c : listaClientes) {
         if (c.getIdCliente() == idCliente) return c;
     }
     return null;
 }
+=======
+    public Cliente obtenerClientePorId(int idCliente) {
+        for (Cliente c : listaClientes) {
+            if (c.getIdCliente() == idCliente) {
+                return c;
+            }
+        }
+        return null;
+    }
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     
     public Vehiculo obtenerVehiculoPorId(int idVehiculo) {
         for (Vehiculo v : listaVehiculos) {
@@ -64,6 +96,7 @@ public class ControladorOrden {
         return null;
     }
     
+<<<<<<< HEAD
     
     public void setListaClientes(ArrayList<modelo.Cliente> lista) {
     this.listaClientes = lista;
@@ -73,6 +106,8 @@ public class ControladorOrden {
     
     
     
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
     public void guardar(PanelPrincipal panel) {
         try {
             String idOrden = String.format("ORD-%03d", listaOrden.size() + 1);
@@ -97,8 +132,12 @@ public class ControladorOrden {
                 throw new Exception("El ID del cliente debe ser un número válido");
             }
 
+<<<<<<< HEAD
               modelo.Cliente clienteExistente = obtenerClientePorId(idCliente);
             //System.out.println("cliente"+clienteExistente.getIdCliente()+"  "+clienteExistente.getNombre());
+=======
+            Cliente clienteExistente = obtenerClientePorId(idCliente);
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             if (clienteExistente == null) {
                 throw new Exception("Cliente con ID " + idCliente + " no encontrado. IDs disponibles: " + obtenerIdsClientes());
             }
@@ -325,7 +364,11 @@ public class ControladorOrden {
                 throw new Exception("El ID del cliente debe ser un número válido");
             }
             
+<<<<<<< HEAD
            modelo.Cliente clienteExistente = obtenerClientePorId(idCliente);
+=======
+            Cliente clienteExistente = obtenerClientePorId(idCliente);
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             if (clienteExistente == null) {
                 throw new Exception("Cliente con ID " + idCliente + " no encontrado.");
             }
@@ -438,6 +481,7 @@ public class ControladorOrden {
         txtTipo.setText("");
         txtObservaciones.setText("");
     }
+<<<<<<< HEAD
     
     public void generarTicket(PanelPrincipal panel) {
 
@@ -512,4 +556,6 @@ public class ControladorOrden {
     
     
     
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 }

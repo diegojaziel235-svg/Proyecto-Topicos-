@@ -41,11 +41,14 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+<<<<<<< HEAD
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="ff" red="99" type="rgb"/>
         </Property>
       </Properties>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -211,7 +214,11 @@
             <Component class="javax.swing.JTextField" name="cliente">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
+=======
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 </Property>
               </Properties>
               <AuxValues>
@@ -226,7 +233,11 @@
             <Component class="javax.swing.JTextField" name="vehiculo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
+=======
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 </Property>
               </Properties>
               <AuxValues>
@@ -272,7 +283,11 @@
             <Component class="javax.swing.JTextField" name="Id_orden">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
+=======
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 </Property>
               </Properties>
               <AuxValues>
@@ -396,7 +411,11 @@
             <Component class="javax.swing.JTextField" name="observaciones">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
+=======
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 </Property>
               </Properties>
               <AuxValues>
@@ -406,7 +425,11 @@
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
+=======
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
@@ -445,20 +468,26 @@
               </AuxValues>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="Fsalida">
+<<<<<<< HEAD
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
               </Properties>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JComboBox" name="tipoPago">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
                     <StringItem index="0" value="Efectivo"/>
@@ -496,11 +525,14 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
+<<<<<<< HEAD
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="VEHICULOS">
@@ -531,7 +563,11 @@
                                   <Component id="jTextField2" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <EmptySpace pref="59" max="32767" attributes="0"/>
+=======
+                                      <EmptySpace max="32767" attributes="0"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jTextField3" max="32767" attributes="0"/>
@@ -547,9 +583,15 @@
                                   <Component id="jLabel14" min="-2" pref="104" max="-2" attributes="0"/>
                                   <Component id="jLabel15" min="-2" pref="104" max="-2" attributes="0"/>
                                   <Component id="jLabel16" min="-2" pref="104" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                   <Component id="jScrollPane3" alignment="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+=======
+                                  <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                           </Group>
                       </Group>
                   </Group>
@@ -601,7 +643,11 @@
                           </Group>
                           <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace pref="97" max="32767" attributes="0"/>
+=======
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                   </Group>
               </Group>
             </DimensionLayout>
@@ -625,6 +671,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="ff" red="66" type="rgb"/>
                 </Property>
@@ -646,6 +693,15 @@
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseExited"/>
               </Events>
+=======
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Limpiar"/>
+              </Properties>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
@@ -653,6 +709,7 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="buscador">
+<<<<<<< HEAD
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -670,6 +727,14 @@
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buscarMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buscarMouseExited"/>
+=======
+            </Component>
+            <Component class="javax.swing.JButton" name="buscar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar"/>
+              </Properties>
+              <Events>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarActionPerformed"/>
               </Events>
             </Component>
@@ -679,11 +744,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField2">
+<<<<<<< HEAD
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
               </Properties>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
@@ -691,6 +759,7 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField3">
+<<<<<<< HEAD
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
@@ -703,6 +772,10 @@
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
               </Properties>
+=======
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField4">
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -715,11 +788,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField5">
+<<<<<<< HEAD
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
               </Properties>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
@@ -735,9 +811,12 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="jTextArea1">
                   <Properties>
+<<<<<<< HEAD
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="cc" red="cc" type="rgb"/>
                     </Property>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
@@ -759,6 +838,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <EmptySpace min="0" pref="828" max="32767" attributes="0"/>
+<<<<<<< HEAD
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -783,10 +863,13 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace min="0" pref="600" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -1274,6 +1357,14 @@
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
             </Property>
           </Properties>
+=======
+                  <EmptySpace min="0" pref="539" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="SERVICIOS">
@@ -1289,6 +1380,32 @@
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel18" min="-2" pref="96" max="-2" attributes="0"/>
+<<<<<<< HEAD
+=======
+                          <Component id="txtIdServicio" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtObservacionesServicio" min="-2" pref="197" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel23" min="-2" pref="43" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnGuardarS" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel24" min="-2" pref="69" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnActualizarS" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnEliminarS" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel22" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                           <Component id="jLabel19" alignment="0" min="-2" pref="186" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1301,6 +1418,7 @@
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="tablac" min="-2" pref="494" max="-2" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <Component id="txtIdServicio" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1314,6 +1432,8 @@
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="btnEliminarS" min="-2" max="-2" attributes="0"/>
                           </Group>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                       </Group>
                       <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
@@ -1344,6 +1464,7 @@
                           <Component id="tablac" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel22" min="-2" pref="29" max="-2" attributes="0"/>
@@ -1360,6 +1481,30 @@
                           </Group>
                       </Group>
                       <EmptySpace pref="90" max="32767" attributes="0"/>
+=======
+                      <Component id="jLabel22" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtObservacionesServicio" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnGuardarS" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel24" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="btnActualizarS" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnEliminarS" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="29" max="32767" attributes="0"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1372,9 +1517,13 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtIdServicio">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
+=======
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdServicioActionPerformed"/>
@@ -1390,9 +1539,13 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreServicio">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
+=======
+                <Property name="text" type="java.lang.String" value="jTextField6"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreServicioActionPerformed"/>
@@ -1408,9 +1561,13 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtPrecioServicio">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
+=======
+                <Property name="text" type="java.lang.String" value="jTextField7"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -1423,9 +1580,13 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtDuracionServicio">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
+=======
+                <Property name="text" type="java.lang.String" value="jTextField8"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDuracionServicioActionPerformed"/>
@@ -1441,6 +1602,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtObservacionesServicio">
               <Properties>
+<<<<<<< HEAD
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="cc" red="cc" type="rgb"/>
                 </Property>
@@ -1448,16 +1610,23 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtObservacionesServicioActionPerformed"/>
               </Events>
+=======
+                <Property name="text" type="java.lang.String" value="jTextField9"/>
+              </Properties>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
             <Container class="javax.swing.JScrollPane" name="tablac">
+<<<<<<< HEAD
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="99" type="rgb"/>
                 </Property>
               </Properties>
+=======
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1482,9 +1651,20 @@
                 </Component>
               </SubComponents>
             </Container>
+<<<<<<< HEAD
             <Component class="javax.swing.JButton" name="btnGuardarS">
               <Properties>
                 <Property name="text" type="java.lang.String" value="GUARDAR"/>
+=======
+            <Component class="javax.swing.JLabel" name="jLabel23">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnGuardarS">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton4"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarSActionPerformed"/>
@@ -1493,9 +1673,20 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
+<<<<<<< HEAD
             <Component class="javax.swing.JButton" name="btnActualizarS">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
+=======
+            <Component class="javax.swing.JLabel" name="jLabel24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnActualizarS">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton5"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarSActionPerformed"/>
@@ -1504,9 +1695,20 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
+<<<<<<< HEAD
             <Component class="javax.swing.JButton" name="btnEliminarS">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+=======
+            <Component class="javax.swing.JLabel" name="jLabel25">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eliminar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEliminarS">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton6"/>
+>>>>>>> c7868f7948ce4beaf70534afddf2680c1ef51504
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarSActionPerformed"/>
